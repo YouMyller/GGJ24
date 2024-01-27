@@ -13,6 +13,9 @@ public class Transition : MonoBehaviour
     [SerializeField]
     private Image blurImage;
 
+    private bool isStarting;
+    private bool isQuitting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +36,16 @@ public class Transition : MonoBehaviour
         if (blurImage.color.a == 1)
         {
             //print("Change scene");
-            SceneManager.LoadScene("Elevator");
+            if(isStarting)
+                SceneManager.LoadScene("Elevator");
+            else if(isQuitting)
+                Application.Quit(); print("Quit!");
         }
     }
 
     public void StartGame()
     {
+        isStarting = true;
         fadeObject.SetActive(true);
         print("play");
         fadeAnimation.Play("blur");
@@ -46,7 +53,8 @@ public class Transition : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
-        print("Quit!");
+        isQuitting = true;
+        fadeObject.SetActive(true);
+        fadeAnimation.Play("blur");
     }
 }
