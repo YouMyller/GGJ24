@@ -12,10 +12,14 @@ public class ElevatorButton : MonoBehaviour
     [SerializeField]
     private float minDistanceToPlayer;
 
+    [SerializeField]
+    private GameObject instructions;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        instructions.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,15 +30,22 @@ public class ElevatorButton : MonoBehaviour
             print("Button pressed");
         }
 
+        if(onButton == true && Vector3.Distance(player.transform.position, transform.position) < minDistanceToPlayer)
+        {
+            instructions.gameObject.SetActive(true);
+        }
+
     }
 
     void OnMouseOver()
     {
         onButton = true;
+        
     }
 
     void OnMouseExit()
     {
         onButton = false;
+        instructions.gameObject.SetActive(false);
     }
 }
