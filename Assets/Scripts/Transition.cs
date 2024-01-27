@@ -47,7 +47,6 @@ public class Transition : MonoBehaviour
     {
         isStarting = true;
         fadeObject.SetActive(true);
-        print("play");
         fadeAnimation.Play("blur");
     }
 
