@@ -12,7 +12,7 @@ public class EyeRay : MonoBehaviour
     [SerializeField]
     private float distance;
 
-    private bool eyeContact;
+    private static bool eyeContact;
 
     private float timer;
 
@@ -25,8 +25,6 @@ public class EyeRay : MonoBehaviour
 
     [SerializeField]
     private float minDistanceToPlayer;
-
-    private bool TooClose;
 
     [SerializeField]
     private Slider mainSlider;
@@ -57,9 +55,8 @@ public class EyeRay : MonoBehaviour
 
         if(eyeContact == true)
         {
-            TooClose = true;
-
-            if(debugging == true)
+            mainSlider.GetComponent<SliderValue>().seen = true;
+            if (debugging == true)
             {
                 //Debug.Log("EyeContact" + ", Timer: " + timer);
             }
@@ -68,10 +65,11 @@ public class EyeRay : MonoBehaviour
 
         else
         {
-            TooClose = false;
+            //mainSlider.GetComponent<SliderValue>().active = false;
+            mainSlider.GetComponent<SliderValue>().seen = false;
         }
 
-        if(timer > FailCondition)
+        if(mainSlider.value > FailCondition)
         {
             //Debug.Log("GameOver");
             isGameOver = true;
@@ -84,31 +82,22 @@ public class EyeRay : MonoBehaviour
             }
         }
 
-        if(Vector3.Distance(Player.transform.position, transform.position) < minDistanceToPlayer)
+        /*if(Vector3.Distance(Player.transform.position, transform.position) < minDistanceToPlayer)
         {
             TooClose = true;
             print("Too close");
             //Debug.Log("TooClose" + ", Timer: " + timer);
             
-        }
+        }*/
 
-        else if(Vector3.Distance(Player.transform.position, transform.position) > minDistanceToPlayer && eyeContact == false)
+
+        else if (!isGameOver)
         {
-            TooClose = false;
+            //mainSlider.value = 0;
         }
 
-        if (TooClose == true) { 
-        
-            timer += Time.deltaTime;
-
-        }
-
-        else if (!TooClose && !isGameOver)
-        {
-            timer = 0;
-        }
-
-        mainSlider.value = timer;
+        //mainSlider.value = timer;
+        //Debug.Log(mainSlider.value);
         
     }
 
@@ -166,5 +155,24 @@ public class EyeRay : MonoBehaviour
         
 
         return hit;
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            mainSlider.GetComponent<SliderValue>().active = true;
+            //Debug.Log("Active");
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            mainSlider.GetComponent<SliderValue>().active = false;
+        }
     }
 }
