@@ -25,7 +25,7 @@ public class SliderValue : MonoBehaviour
             mainSlider.value += Time.deltaTime;
         }
 
-        if(active == false && seen == false)
+        if (active == false && seen == false)
         {
             mainSlider.value = 0;
             //Debug.Log(mainSlider.value);
