@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,12 @@ public class TitleScreen : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Test");
+        print("Go");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        print("Quit!");
     }
 }
