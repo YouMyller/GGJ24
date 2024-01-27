@@ -23,6 +23,7 @@ public class SliderValue : MonoBehaviour
         if(seen == true)
         {
             mainSlider.value += Time.deltaTime;
+            Debug.Log(mainSlider.value);
         }
 
         if (active == false && seen == false)
