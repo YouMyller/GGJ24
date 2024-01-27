@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: d78b98a246e4a114e8bd8c00e1e579ca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: 13dae3afebc08124384f410e6bdb1f11
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Transit.unity
     guid: 05e1f14b50705ea4f837c2f95eb951ff
   - enabled: 1
