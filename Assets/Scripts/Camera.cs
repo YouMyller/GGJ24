@@ -49,6 +49,8 @@ public class Camera : MonoBehaviour
         Vector3 moveDirection = (playerBody.transform.forward * verticalInput) + (playerBody.transform.right * horizontalInput);
         moveDirection.y = 0f;
 
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
         controller.Move(moveDirection * walkSpeed * Time.deltaTime);
     }
 }

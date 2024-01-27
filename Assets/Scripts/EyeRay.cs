@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class EyeRay : MonoBehaviour
 {
@@ -42,7 +43,10 @@ public class EyeRay : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         mainSlider = GameObject.FindWithTag("Slider").GetComponent<Slider>();
         gameOverText = GameObject.Find("GameOver");
-        gameOverText.SetActive(false);
+        gameOverText.GetComponent<TextMeshProUGUI>().enabled = false;
+        print(gameOverText); 
+
+        //gameOverText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -71,7 +75,7 @@ public class EyeRay : MonoBehaviour
         {
             //Debug.Log("GameOver");
             isGameOver = true;
-            gameOverText.SetActive(true);
+            gameOverText.GetComponent<Text>().enabled = true;
             if (Input.GetMouseButtonDown(1))
             {
                 print("Load should happen");
@@ -83,6 +87,7 @@ public class EyeRay : MonoBehaviour
         if(Vector3.Distance(Player.transform.position, transform.position) < minDistanceToPlayer)
         {
             TooClose = true;
+            print("Too close");
             //Debug.Log("TooClose" + ", Timer: " + timer);
             
         }
