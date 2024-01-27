@@ -15,11 +15,15 @@ public class ElevatorButton : MonoBehaviour
     [SerializeField]
     private GameObject instructions;
 
+    [SerializeField]
+    private GameObject Finish;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         instructions.gameObject.SetActive(false);
+        Finish.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class ElevatorButton : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Vector3.Distance(player.transform.position, transform.position) < minDistanceToPlayer)
         {
             print("Button pressed");
+            Finish.gameObject.SetActive(true);
         }
 
         if(onButton == true && Vector3.Distance(player.transform.position, transform.position) < minDistanceToPlayer)
