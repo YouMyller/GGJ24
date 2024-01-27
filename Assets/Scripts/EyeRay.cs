@@ -32,6 +32,8 @@ public class EyeRay : MonoBehaviour
 
     private GameObject gameOverText;
 
+    private bool isGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +57,7 @@ public class EyeRay : MonoBehaviour
 
             if(debugging == true)
             {
-                Debug.Log("EyeContact" + ", Timer: " + timer);
+                //Debug.Log("EyeContact" + ", Timer: " + timer);
             }
             
         }
@@ -67,10 +69,12 @@ public class EyeRay : MonoBehaviour
 
         if(timer > FailCondition)
         {
-            Debug.Log("GameOver");
+            //Debug.Log("GameOver");
+            isGameOver = true;
             gameOverText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(1))
             {
+                print("Load should happen");
                 Scene thisScene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(thisScene.name);
             }
@@ -79,7 +83,7 @@ public class EyeRay : MonoBehaviour
         if(Vector3.Distance(Player.transform.position, transform.position) < minDistanceToPlayer)
         {
             TooClose = true;
-            Debug.Log("TooClose" + ", Timer: " + timer);
+            //Debug.Log("TooClose" + ", Timer: " + timer);
             
         }
 
@@ -94,7 +98,7 @@ public class EyeRay : MonoBehaviour
 
         }
 
-        else
+        else if (!TooClose && !isGameOver)
         {
             timer = 0;
         }
