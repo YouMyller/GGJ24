@@ -180,7 +180,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game Over
+  m_text: 'You broke the Finnish social contract and scared the poor Finn to DEATH!
+
+
+    Game
+    Over!
 
 
     Press Right Mouse to try again'
@@ -2326,6 +2330,10 @@ PrefabInstance:
       propertyPath: mainSlider
       value: 
       objectReference: {fileID: 135930046}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: minDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7061545187037598348, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: path
       value: 
