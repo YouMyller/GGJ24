@@ -1265,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_Radius
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_IsTrigger
@@ -1320,9 +1320,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 18ab9d3f8b566a24ba9ff4c7987a03b9, type: 2}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: distance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: mainSlider
       value: 
       objectReference: {fileID: 135930046}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: FailCondition
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: minDistanceToPlayer
       value: 4
@@ -1333,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 1673362422}
     - target: {fileID: 7061545187037598348, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 997915004267339854, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
@@ -2381,7 +2389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_Radius
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_IsTrigger
@@ -2436,9 +2444,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 18ab9d3f8b566a24ba9ff4c7987a03b9, type: 2}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: distance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: mainSlider
       value: 
       objectReference: {fileID: 135930046}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: FailCondition
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: minDistanceToPlayer
       value: 4
@@ -2449,7 +2465,7 @@ PrefabInstance:
       objectReference: {fileID: 191190426}
     - target: {fileID: 7061545187037598348, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 997915004267339854, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
@@ -4603,6 +4619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7449159008137041849, guid: 99cbe454c732dc14fbabd898bc8b4f62, type: 3}
+      propertyPath: m_MaxValue
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7559645504080495381, guid: 99cbe454c732dc14fbabd898bc8b4f62, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4709,7 +4729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_Radius
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_IsTrigger
@@ -4764,9 +4784,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 18ab9d3f8b566a24ba9ff4c7987a03b9, type: 2}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: distance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: mainSlider
       value: 
       objectReference: {fileID: 135930046}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: FailCondition
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: minDistanceToPlayer
       value: 4
@@ -4777,7 +4805,7 @@ PrefabInstance:
       objectReference: {fileID: 1149719919}
     - target: {fileID: 7061545187037598348, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 997915004267339854, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
@@ -5093,7 +5121,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5601,7 +5629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_Radius
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1176272685031937142, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: m_IsTrigger
@@ -5656,9 +5684,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 18ab9d3f8b566a24ba9ff4c7987a03b9, type: 2}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: distance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: mainSlider
       value: 
       objectReference: {fileID: 135930046}
+    - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
+      propertyPath: FailCondition
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6555172541382915047, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: minDistanceToPlayer
       value: 4
@@ -5669,7 +5705,7 @@ PrefabInstance:
       objectReference: {fileID: 881755586}
     - target: {fileID: 7061545187037598348, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 997915004267339854, guid: 24d9efbaf88e89d47825a0eac31cef4d, type: 3}
