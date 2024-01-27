@@ -53,7 +53,7 @@ public class EyeRay : MonoBehaviour
 
         EyeSight();
 
-        if(eyeContact == true)
+        if(eyeContact == true && isGameOver == false)
         {
             mainSlider.GetComponent<SliderValue>().seen = true;
             if (debugging == true)
@@ -69,13 +69,15 @@ public class EyeRay : MonoBehaviour
             mainSlider.GetComponent<SliderValue>().seen = false;
         }
 
-        if(mainSlider.value > FailCondition)
+        if(mainSlider.value >= FailCondition)
         {
             //Debug.Log("GameOver");
             isGameOver = true;
-            gameOverText.GetComponent<Text>().enabled = true;
+            gameOverText.GetComponent<TextMeshProUGUI>().enabled = true;
+            Player.transform.GetChild(0).GetComponent<Camera>().enabled = false;
             if (Input.GetMouseButtonDown(1))
             {
+                
                 print("Load should happen");
                 Scene thisScene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(thisScene.name);
@@ -94,6 +96,11 @@ public class EyeRay : MonoBehaviour
         else if (!isGameOver)
         {
             //mainSlider.value = 0;
+        }
+
+        if(isGameOver == true)
+        {
+            mainSlider.GetComponent<SliderValue>().dead = true;
         }
 
         //mainSlider.value = timer;
@@ -160,7 +167,7 @@ public class EyeRay : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isGameOver == false)
         {
             mainSlider.GetComponent<SliderValue>().active = true;
             //Debug.Log("Active");
