@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EyeRay : MonoBehaviour
 {
@@ -25,7 +26,8 @@ public class EyeRay : MonoBehaviour
 
     private bool TooClose;
 
-    
+    [SerializeField]
+    private Slider mainSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class EyeRay : MonoBehaviour
         eyeContact = false;
         PlayerEyes = GameObject.FindWithTag("PlayerEyes");
         Player = GameObject.FindWithTag("Player");
+        mainSlider = GameObject.FindWithTag("Slider").GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -85,7 +88,7 @@ public class EyeRay : MonoBehaviour
             timer = 0;
         }
 
-
+        mainSlider.value = timer;
         
     }
 
