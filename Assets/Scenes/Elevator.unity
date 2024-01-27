@@ -362,12 +362,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107714061}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7, y: 0.8437, z: -4.09}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.0371037, y: -8.098459, z: 0.635169}
   m_LocalScale: {x: 13.5232, y: 8.454237, z: 0.5498412}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1773391302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &135930046 stripped
 MonoBehaviour:
@@ -1288,12 +1288,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008884134}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.88, y: 0.8437, z: -4.09}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.542896, y: -8.098459, z: 0.635169}
   m_LocalScale: {x: 13.5232, y: 8.454237, z: 0.5498412}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1773391302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1155276990
 GameObject:
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540fa2eb5b1b70544973eea30cc9e34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene2Load: Test
+  Scene2Load: EndScene
 --- !u!64 &1206448743
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2168,6 +2168,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99cbe454c732dc14fbabd898bc8b4f62, type: 3}
+--- !u!1 &1773391300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773391302}
+  - component: {fileID: 1773391301}
+  m_Layer: 0
+  m_Name: Elevator door controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1773391301
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773391300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0674d38ea7ec8942b0e7d3df934ecd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1773391302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773391300}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.662896, y: 8.94216, z: -4.725169}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1008884138}
+  - {fileID: 107714065}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791470528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,6 +2474,7 @@ MonoBehaviour:
   minDistanceToPlayer: 1.5
   instructions: {fileID: 877399723}
   Finish: {fileID: 1206448741}
+  elevatorDoorObject: {fileID: 1773391300}
 --- !u!136 &1897719609
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2995,8 +3051,6 @@ SceneRoots:
   - {fileID: 1157493302}
   - {fileID: 2137149602}
   - {fileID: 1161539473}
-  - {fileID: 1008884138}
-  - {fileID: 107714065}
   - {fileID: 1791470532}
   - {fileID: 1266087585}
   - {fileID: 433234217}
@@ -3008,3 +3062,4 @@ SceneRoots:
   - {fileID: 1756183716}
   - {fileID: 1258726374}
   - {fileID: 1982048304}
+  - {fileID: 1773391302}
