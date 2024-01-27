@@ -18,12 +18,18 @@ public class ElevatorButton : MonoBehaviour
     [SerializeField]
     private GameObject Finish;
 
+    [SerializeField]
+    private GameObject elevatorDoorObject;
+    private Animator elevatorDoorAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         instructions.gameObject.SetActive(false);
         Finish.gameObject.SetActive(false);
+        elevatorDoorAnimation = elevatorDoorObject.GetComponent<Animator>();
+        elevatorDoorAnimation.enabled = false;
     }
 
     // Update is called once per frame
@@ -33,6 +39,9 @@ public class ElevatorButton : MonoBehaviour
         {
             print("Button pressed");
             Finish.gameObject.SetActive(true);
+
+            elevatorDoorAnimation.enabled = true;
+            elevatorDoorAnimation.Play("ElevatorDoor");
         }
 
         if(onButton == true && Vector3.Distance(player.transform.position, transform.position) < minDistanceToPlayer)
