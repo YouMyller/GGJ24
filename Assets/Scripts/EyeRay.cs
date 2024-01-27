@@ -94,13 +94,13 @@ public class EyeRay : MonoBehaviour
 
     private RaycastHit EyeSight()
     {
-        Ray ray = new Ray(transform.position, transform.right);
+        Ray ray = new Ray(transform.position, transform.forward);
 
         RaycastHit hit;
 
 
 
-        Vector3 endPos = transform.position + (distance * transform.right);
+        Vector3 endPos = transform.position + (distance * transform.forward);
         if (Physics.Raycast(ray, out hit, distance))
         {
 
