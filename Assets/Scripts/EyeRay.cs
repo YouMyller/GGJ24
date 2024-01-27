@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EyeRay : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class EyeRay : MonoBehaviour
     [SerializeField]
     private Slider mainSlider;
 
+    private GameObject gameOverText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,8 @@ public class EyeRay : MonoBehaviour
         PlayerEyes = GameObject.FindWithTag("PlayerEyes");
         Player = GameObject.FindWithTag("Player");
         mainSlider = GameObject.FindWithTag("Slider").GetComponent<Slider>();
+        gameOverText = GameObject.Find("GameOver");
+        gameOverText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,6 +68,12 @@ public class EyeRay : MonoBehaviour
         if(timer > FailCondition)
         {
             Debug.Log("GameOver");
+            gameOverText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Scene thisScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(thisScene.name);
+            }
         }
 
         if(Vector3.Distance(Player.transform.position, transform.position) < minDistanceToPlayer)
