@@ -32,7 +32,7 @@ public class Transition : MonoBehaviour
         {
             //print("Change scene");
             if (isStarting)
-                SceneManager.LoadScene("Elevator");
+                SceneManager.LoadScene("Elevator 1");
             else if (isQuitting)
                 Application.Quit();
             else if (isTeaching)

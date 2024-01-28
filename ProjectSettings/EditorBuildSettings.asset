@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Transit.unity
     guid: 05e1f14b50705ea4f837c2f95eb951ff
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Elevator.unity
     guid: 4ea1a9ed2294fc244b2fb6e9972020d9
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HowToPlay.unity
     guid: d24277798ddff4d469127dc4b0642bd7
+  - enabled: 1
+    path: Assets/Scenes/Elevator 1.unity
+    guid: 7bbba0ea9bf775e4bb3fa0fefb2baa5b
   m_configObjects: {}

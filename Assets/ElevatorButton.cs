@@ -41,7 +41,7 @@ public class ElevatorButton : MonoBehaviour
             Finish.gameObject.SetActive(true);
 
             elevatorDoorAnimation.enabled = true;
-            elevatorDoorAnimation.Play("ElevatorDoor");
+            elevatorDoorAnimation.Play("NewElevator");
         }
 
         if(onButton == true && Vector3.Distance(player.transform.position, transform.position) < minDistanceToPlayer)
