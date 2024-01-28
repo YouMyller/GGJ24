@@ -36,6 +36,11 @@ public class EyeRay : MonoBehaviour
     private GameObject fadeObject;
     private Animator fadeAnimation;
 
+    private AudioSource levelTheme;
+    private AudioSource deathTheme;
+
+    private bool isPlaying;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +53,8 @@ public class EyeRay : MonoBehaviour
         fadeObject = GameObject.Find("FadeOut");
         fadeAnimation = fadeObject.GetComponent<Animator>();
         fadeAnimation.enabled = false;
-
+        levelTheme = GameObject.Find("SoundPlayer").GetComponent<AudioSource>();
+        deathTheme = GameObject.Find("SoundPlayer GameOver").GetComponent<AudioSource>();
         //gameOverText.SetActive(false);
     }
 
@@ -80,8 +86,17 @@ public class EyeRay : MonoBehaviour
             gameOverText.GetComponent<TextMeshProUGUI>().enabled = true;
             Player.transform.GetChild(0).GetComponent<Camera>().enabled = false;
             fadeAnimation.enabled = true;
+
             fadeAnimation.Play("blur");
-            
+
+            levelTheme.Stop();
+
+            if (!isPlaying)
+            {
+                deathTheme.Play();
+                isPlaying = true;
+            }
+
             if (Input.GetMouseButtonDown(1))
             {
                 Scene thisScene = SceneManager.GetActiveScene();
