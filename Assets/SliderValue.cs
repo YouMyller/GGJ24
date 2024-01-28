@@ -24,7 +24,7 @@ public class SliderValue : MonoBehaviour
 
         if(seen == true && dead == false)
         {
-            mainSlider.value += Time.deltaTime;
+            mainSlider.value = mainSlider.maxValue;
             Debug.Log(mainSlider.value);
         }
 
