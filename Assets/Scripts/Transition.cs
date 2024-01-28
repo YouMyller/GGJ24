@@ -24,6 +24,8 @@ public class Transition : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         if (currentScene.name != "EndScene")
         {
