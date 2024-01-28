@@ -33,6 +33,9 @@ public class EyeRay : MonoBehaviour
 
     private bool isGameOver;
 
+    private GameObject fadeObject;
+    private Animator fadeAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +45,9 @@ public class EyeRay : MonoBehaviour
         mainSlider = GameObject.FindWithTag("Slider").GetComponent<Slider>();
         gameOverText = GameObject.Find("GameOver");
         gameOverText.GetComponent<TextMeshProUGUI>().enabled = false;
-        print(gameOverText); 
+        fadeObject = GameObject.Find("FadeOut");
+        fadeAnimation = fadeObject.GetComponent<Animator>();
+        fadeAnimation.enabled = false;
 
         //gameOverText.SetActive(false);
     }
@@ -71,14 +76,14 @@ public class EyeRay : MonoBehaviour
 
         if(mainSlider.value >= FailCondition)
         {
-            //Debug.Log("GameOver");
             isGameOver = true;
             gameOverText.GetComponent<TextMeshProUGUI>().enabled = true;
             Player.transform.GetChild(0).GetComponent<Camera>().enabled = false;
+            fadeAnimation.enabled = true;
+            fadeAnimation.Play("blur");
+            
             if (Input.GetMouseButtonDown(1))
             {
-                
-                print("Load should happen");
                 Scene thisScene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(thisScene.name);
             }

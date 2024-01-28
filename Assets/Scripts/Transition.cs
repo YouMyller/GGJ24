@@ -26,13 +26,6 @@ public class Transition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            SceneManager.LoadScene("Transit");
-        }
-
-        //print(blurImage.color.a);
-
         if (blurImage.color.a == 1)
         {
             //print("Change scene");
