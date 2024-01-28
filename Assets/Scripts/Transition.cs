@@ -15,6 +15,8 @@ public class Transition : MonoBehaviour
 
     private bool isStarting;
     private bool isQuitting;
+    private bool isTeaching;
+    private bool isGoingBack;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +31,34 @@ public class Transition : MonoBehaviour
         if (blurImage.color.a == 1)
         {
             //print("Change scene");
-            if(isStarting)
+            if (isStarting)
                 SceneManager.LoadScene("Elevator");
-            else if(isQuitting)
-                Application.Quit(); print("Quit!");
+            else if (isQuitting)
+                Application.Quit();
+            else if (isTeaching)
+            { SceneManager.LoadScene("HowToPlay"); print("Yes"); }
+            else if (isGoingBack)
+                SceneManager.LoadScene("TitleScreen");
         }
     }
 
     public void StartGame()
     {
         isStarting = true;
+        fadeObject.SetActive(true);
+        fadeAnimation.Play("blur");
+    }
+
+    public void HowToPlay()
+    {
+        isTeaching = true;
+        fadeObject.SetActive(true);
+        fadeAnimation.Play("blur");
+    }
+
+    public void Back()
+    {
+        isGoingBack = true;
         fadeObject.SetActive(true);
         fadeAnimation.Play("blur");
     }
