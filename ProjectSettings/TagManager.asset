@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerEyes
   - Slider
+  - Finn
   layers:
   - Default
   - TransparentFX
