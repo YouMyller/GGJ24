@@ -18,27 +18,37 @@ public class Transition : MonoBehaviour
     private bool isTeaching;
     private bool isGoingBack;
 
+    private Scene currentScene;
+
     // Start is called before the first frame update
     void Start()
     {
-        fadeAnimation = fadeObject.GetComponent<Animator>();
-        fadeObject.SetActive(false);
+        currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name != "EndScene")
+        {
+            fadeAnimation = fadeObject.GetComponent<Animator>();
+            fadeObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (blurImage.color.a == 1)
+        if (currentScene.name != "EndScene")
         {
-            //print("Change scene");
-            if (isStarting)
-                SceneManager.LoadScene("Elevator 1");
-            else if (isQuitting)
-                Application.Quit();
-            else if (isTeaching)
-            { SceneManager.LoadScene("HowToPlay"); print("Yes"); }
-            else if (isGoingBack)
-                SceneManager.LoadScene("TitleScreen");
+            if (blurImage.color.a == 1)
+            {
+                //print("Change scene");
+                if (isStarting)
+                    SceneManager.LoadScene("Elevator 1");
+                else if (isQuitting)
+                    Application.Quit();
+                else if (isTeaching)
+                { SceneManager.LoadScene("HowToPlay"); print("Yes"); }
+                else if (isGoingBack)
+                    SceneManager.LoadScene("TitleScreen");
+            }
         }
     }
 
@@ -65,8 +75,13 @@ public class Transition : MonoBehaviour
 
     public void QuitGame()
     {
-        isQuitting = true;
-        fadeObject.SetActive(true);
-        fadeAnimation.Play("blur");
+        if (currentScene.name != "EndScene")
+        {
+            fadeObject.SetActive(true);
+            fadeAnimation.Play("blur");
+            isQuitting = true;
+        }
+        else
+            Application.Quit(); print("Quit");
     }
 }
