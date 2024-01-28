@@ -22,6 +22,10 @@ public class ElevatorButton : MonoBehaviour
     private GameObject elevatorDoorObject;
     private Animator elevatorDoorAnimation;
 
+    [SerializeField]
+    private AudioSource elevatorButtonSound;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,8 @@ public class ElevatorButton : MonoBehaviour
         {
             print("Button pressed");
             Finish.gameObject.SetActive(true);
+
+            elevatorButtonSound.Play();
 
             elevatorDoorAnimation.enabled = true;
             elevatorDoorAnimation.Play("NewElevator");

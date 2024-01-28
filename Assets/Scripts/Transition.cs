@@ -20,6 +20,9 @@ public class Transition : MonoBehaviour
 
     private Scene currentScene;
 
+    [SerializeField]
+    private AudioSource clickSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +62,7 @@ public class Transition : MonoBehaviour
         isStarting = true;
         fadeObject.SetActive(true);
         fadeAnimation.Play("blur");
+        clickSound.Play();
     }
 
     public void HowToPlay()
@@ -66,6 +70,7 @@ public class Transition : MonoBehaviour
         isTeaching = true;
         fadeObject.SetActive(true);
         fadeAnimation.Play("blur");
+        clickSound.Play();
     }
 
     public void Back()
@@ -73,6 +78,7 @@ public class Transition : MonoBehaviour
         isGoingBack = true;
         fadeObject.SetActive(true);
         fadeAnimation.Play("blur");
+        clickSound.Play();
     }
 
     public void QuitGame()
@@ -82,6 +88,7 @@ public class Transition : MonoBehaviour
             fadeObject.SetActive(true);
             fadeAnimation.Play("blur");
             isQuitting = true;
+            clickSound.Play();
         }
         else
             Application.Quit(); print("Quit");
